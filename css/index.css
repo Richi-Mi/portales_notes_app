@@ -1,0 +1,65 @@
+/* Aside Styles */
+.container {
+    display: grid;
+    grid-template-areas: "aside conten conten";
+    min-height: 100%;
+}
+.container.not_aside .nota {
+    transform: translateX(-15vw);
+}
+.container aside {
+    grid-area: aside;
+    width: 25vw;
+    background-color: var(--color_3);
+    position: relative;
+}
+.container aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container aside .link_nota {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+}
+.container aside .link_nota:nth-child(2n) {
+    background-color: var(--color_alt);
+}
+.container aside .link_nota:hover {
+    background-color: var(--color_hover);
+}
+.container aside .link_nota a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+.btn_close {
+    position: absolute;
+    left: 100%;
+    background-color: var(--color_2);
+    padding: .5em;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    cursor: pointer;
+}
+.btn_close a {
+    color: #fff;
+}
+.cerrar {
+    transform: translateX(-100%);
+}
+.cerrar .btn_close i{
+    transform: rotate(180deg);
+}
+/*__ Conatiner Notes __*/
+.container .nota {
+    grid-area: conten;
+    background-color: #fff;
+    padding: 2em;
+}
+.nota hr {
+    margin: 1em 0;
+}
