@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,54 +8,90 @@
     <title> Mis Notas. </title>
     <!-- CDN Font-Awesome -->
     <script src="https://kit.fontawesome.com/0363a45558.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <nav>
         <div class="nav_title">
-            <h1> NOTES APP </h1>
+            <h1> <i class="fa-regular fa-note-sticky"></i> NOTES APP </h1>
         </div>
         <div class="nav_name">
-            <h1> <input type="text" id="nombre"> </h1>
+            <input type="text" id="name">
+        </div>
+        <div class="nav_opt">
+            <a href="#"> <i class="fa-solid fa-plus trans_ease"></i> </a>
         </div>
     </nav>
-    <aside>
-        <div class="btn_close">
-            <!-- Cambiar icono desde JavaScript -->
-            <a href="#"> <i class="fa-solid fa-arrow-right"></i> </a>
-        </div>
-        <!-- Estructura de cada NOTA -->
-        <div class="link_nota">
-            <a href="#"> Titulo de la nota </a>
-        </div>
-        <div class="link_nota">
-            <a href="#"> Titulo de la nota </a>
-        </div>
-        <div class="link_nota">
-            <a href="#"> Titulo de la nota </a>
-        </div>
-        <div class="link_nota">
-            <a href="#"> Titulo de la nota </a>
-        </div>
-        <div class="link_nota">
-            <a href="#"> Titulo de la nota </a>
-        </div>
-        <div class="link_nota">
-            <a href="#"> Titulo de la nota </a>
-        </div>
-    </aside>
+
     <div class="container">
-        <h1> Contenido de la Nota </h1>
-        <hr>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iste provident delectus libero recusandae, consequuntur explicabo nesciunt nisi voluptatem quos nobis accusamus, asperiores exercitationem ad, maiores labore hic harum impedit?
-        Ipsum, ipsam quas laudantium accusantium doloribus deserunt mollitia suscipit voluptate qui, nihil quidem non repellendus nemo delectus laborum nostrum pariatur, illo assumenda cumque esse saepe nam consectetur nobis necessitatibus? Obcaecati?
-        Placeat, eveniet fugiat explicabo est quasi deserunt nobis. Libero fugiat, totam iste corrupti explicabo labore consectetur fuga dolorem est. Eum porro quisquam hic voluptate, unde illum facilis esse itaque corporis?
-        Omnis ipsa modi rem expedita ipsam doloremque repudiandae nemo eligendi. Necessitatibus temporibus asperiores praesentium dolore nulla omnis excepturi. Cum, asperiores ex? Rem officiis id ex nemo sed quisquam autem non.
-        Non eum temporibus aliquid voluptatem nemo eveniet aperiam consectetur, natus dignissimos deleniti debitis. Magnam vitae blanditiis facere totam est, dolorem laudantium ullam, temporibus nostrum natus deleniti ea accusantium ex possimus.
-        Nemo suscipit placeat modi distinctio aliquam quasi voluptas, fugit dignissimos! Mollitia eveniet tempore id consectetur aliquam animi aut est at eos. Vel, quasi temporibus! Unde obcaecati at nihil? Quod, itaque.
-        Veritatis voluptatem sapiente iusto velit fugit? Velit, quas dolorum accusantium corrupti eum molestiae magnam, minima et enim recusandae modi repellat deserunt laboriosam harum! Provident esse laborum ex ipsa suscipit autem?
-        Et, asperiores? Omnis hic, sunt reprehenderit doloremque error dolorem eius? Magni illum aspernatur accusamus qui enim ad, aperiam officiis commodi nam nemo sed repellendus nesciunt deserunt velit officia sit temporibus.
-        Eligendi neque, quos natus sequi mollitia expedita explicabo reiciendis ab recusandae animi aut hic perspiciatis nostrum saepe exercitationem sapiente modi soluta nihil dolores assumenda doloribus? Nam, porro? Saepe, eos possimus.
-        Illo, ratione. Minus, ut. Sit officia eligendi deserunt accusamus assumenda! Beatae vero dolorum facilis laudantium. Odit eius eaque a sapiente, dignissimos iure minima harum voluptatibus quam sed ea, debitis veniam.</p>
+        <aside class="aside trans_ease">
+            <div class="btn_close">
+                <!-- Cambiar icono desde JavaScript -->
+                <a href="#"> <i class="fa-solid fa-arrow-left trans_ease"></i> </a>
+            </div>
+            <!-- Estructura de cada NOTA -->
+            <div class="link_nota trans_ease">
+                <a href="#"> <i class="fa-regular fa-note-sticky"></i> Titulo de la nota </a>
+            </div>
+            <div class="link_nota trans_ease">
+                <a href="#"> Titulo de la nota </a>
+            </div>
+            <div class="link_nota trans_ease">
+                <a href="#"> Titulo de la nota </a>
+            </div>
+            <div class="link_nota">
+                <a href="#"> Titulo de la nota </a>
+            </div>
+            <div class="link_nota">
+                <a href="#"> Titulo de la nota </a>
+            </div>
+            <div class="link_nota">
+                <a href="#"> Titulo de la nota </a>
+            </div>
+        </aside>
+        <div class="nota trans_ease">
+            <h1> Contenido de la Nota </h1>
+            <hr>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iste provident delectus libero
+                recusandae,
+                consequuntur explicabo nesciunt nisi voluptatem quos nobis accusamus, asperiores exercitationem ad,
+                maiores
+                labore hic harum impedit?
+                Ipsum, ipsam quas laudantium accusantium doloribus deserunt mollitia suscipit voluptate qui, nihil
+                quidem
+                non repellendus nemo delectus laborum nostrum pariatur, illo assumenda cumque esse saepe nam consectetur
+                nobis necessitatibus? Obcaecati?
+                Placeat, eveniet fugiat explicabo est quasi deserunt nobis. Libero fugiat, totam iste corrupti explicabo
+                labore consectetur fuga dolorem est. Eum porro quisquam hic voluptate, unde illum facilis esse itaque
+                corporis?
+                Omnis ipsa modi rem expedita ipsam doloremque repudiandae nemo eligendi. Necessitatibus temporibus
+                asperiores praesentium dolore nulla omnis excepturi. Cum, asperiores ex? Rem officiis id ex nemo sed
+                quisquam autem non.
+                Non eum temporibus aliquid voluptatem nemo eveniet aperiam consectetur, natus dignissimos deleniti
+                debitis.
+                Magnam vitae blanditiis facere totam est, dolorem laudantium ullam, temporibus nostrum natus deleniti ea
+                accusantium ex possimus.
+                Nemo suscipit placeat modi distinctio aliquam quasi voluptas, fugit dignissimos! Mollitia eveniet
+                tempore id
+                consectetur aliquam animi aut est at eos. Vel, quasi temporibus! Unde obcaecati at nihil? Quod, itaque.
+                Veritatis voluptatem sapiente iusto velit fugit? Velit, quas dolorum accusantium corrupti eum molestiae
+                magnam, minima et enim recusandae modi repellat deserunt laboriosam harum! Provident esse laborum ex
+                ipsa
+                suscipit autem?
+                Et, asperiores? Omnis hic, sunt reprehenderit doloremque error dolorem eius? Magni illum aspernatur
+                accusamus qui enim ad, aperiam officiis commodi nam nemo sed repellendus nesciunt deserunt velit officia
+                sit
+                temporibus.
+                Eligendi neque, quos natus sequi mollitia expedita explicabo reiciendis ab recusandae animi aut hic
+                perspiciatis nostrum saepe exercitationem sapiente modi soluta nihil dolores assumenda doloribus? Nam,
+                porro? Saepe, eos possimus.
+                Illo, ratione. Minus, ut. Sit officia eligendi deserunt accusamus assumenda! Beatae vero dolorum facilis
+                laudantium. Odit eius eaque a sapiente, dignissimos iure minima harum voluptatibus quam sed ea, debitis
+                veniam.</p>
+        </div>
     </div>
+    <script src="./js/interface.js"></script>
 </body>
+
 </html>

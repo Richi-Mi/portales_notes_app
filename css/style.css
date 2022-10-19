@@ -1,4 +1,113 @@
+:root {
+    --color_1: #F51D00;
+    --color_2: #D63900;
+    --color_3: #EB6100;
+    --color_4: #D47D0B;
+    --color_5: #F7B01B;
+
+    --color_alt: #ff6a00;
+    --color_hover: #a14300;
+}
 * {
     margin: 0;
     box-sizing: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input {
+    border: 0;
+    outline: 0;
+}
+body {
+    min-height: 100vh;
+}
+/* Nav Styles */
+nav {
+    background-color: var(--color_1);
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.trans_ease {
+    transition: .4s all ease;
+}
+.nav_title h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+.nav_opt a,
+.nav_name input,
+.nav_title h1,
+.container aside .link_nota a {
+    font-size: 1.4em;
+    color: #fff;
+}
+.nav_name input{
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav_opt a:hover i {
+    transform: scale(1.4);
+    color: var(--color_5);
+}
+/* Aside Styles */
+.container {
+    display: grid;
+    grid-template-areas: "aside conten conten";
+    min-height: 100%;
+}
+.container.not_aside .nota {
+    transform: translateX(-15vw);
+}
+.container aside {
+    grid-area: aside;
+    width: 25vw;
+    background-color: var(--color_3);
+    position: relative;
+}
+.container aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container aside .link_nota {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+}
+.container aside .link_nota:nth-child(2n) {
+    background-color: var(--color_alt);
+}
+.container aside .link_nota:hover {
+    background-color: var(--color_hover);
+}
+.container aside .link_nota a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+.btn_close {
+    position: absolute;
+    left: 100%;
+    background-color: var(--color_2);
+    padding: .5em;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    cursor: pointer;
+}
+.btn_close a {
+    color: #fff;
+}
+.cerrar {
+    transform: translateX(-100%);
+}
+.cerrar .btn_close i{
+    transform: rotate(180deg);
+}
+/*__ Conatiner Notes __*/
+.container .nota {
+    grid-area: conten;
+    background-color: #fff;
+    padding: 2em;
 }
