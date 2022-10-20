@@ -27,3 +27,6 @@ nav {
     transform: scale(1.4);
     color: var(--color_5);
 }
+nav a:hover {
+    color: #999;
+}
