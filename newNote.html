@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/new.css">
+
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -33,6 +35,9 @@
             <a href="#" class="add_title"> Agregar Titulo </a>
         </div>
         <div class="opt">
+            <input type="text" name="title" id="titulo" placeholder="Titulo de la Nota">
+        </div>
+        <div class="opt">
             <a href="#" class="add_parr"> Agregar Parrafo </a>
         </div>
     </nav>
@@ -40,19 +45,29 @@
     <div class="new_note">
         <div class="note_element">
             <div class="elements">
-                <h1> (Ejemplo de Nueva Nota ) </h1>
-                <a href="#" class="btn_del"> X </a>
+                <input type="text" name="txt" class="in_title" placeholder="Inserte un titulo">
+                <div class="aside_el">
+                    <a href="#" class="btn_del"> X </a>
+                    <a href="#"> U </a>
+                </div>
             </div>
-            <hr>
+            <hr class="hr_t">
         </div>
         <div class="note_element">
             <div class="elements">
-                <p> ( Parrafo de nueva Nota ) </p>
-                <a href="#" class="btn_del"> X </a>
+                <textarea name="text" id="area_txt" cols="30" rows="50"></textarea>
+                
+                <div class="aside_el">
+                    <a href="#" class="btn_del"> X </a>
+                    <a href="#"> U </a>
+                </div>
             </div>
-            <hr>
+            <hr class="hr_p">
         </div>
         
+        <div class="note_btn">
+            <button class="btn_send"> Guardar Nota </button>
+        </div>
     </div>
     <script src="./js/interface/nombre.js"></script>
     <script src="./js/addNote.js" type="module"></script>

@@ -5,6 +5,9 @@ nav {
     justify-content: space-between;
     padding: 1em;
 }
+nav a {
+    transition: .1s letter-spacing ease-in;
+}
 .trans_ease {
     transition: .4s all ease;
 }
@@ -28,5 +31,5 @@ nav {
     color: var(--color_5);
 }
 nav a:hover {
-    color: #999;
+    letter-spacing: 1px;
 }

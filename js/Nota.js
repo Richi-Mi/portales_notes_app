@@ -5,11 +5,11 @@ class Nota {
         this.elements = [];
     }
     addElement( type, content ) {
-        const el = {
+        const element = {
             type,
             content
         }
-        this.elements.push( el );
+        this.elements.push( element );
     }
     removeElement( ind ) {
         let newElements;
@@ -21,6 +21,12 @@ class Nota {
     }
     getElements() {
         return this.elements;
+    }
+    setTitulo( titulo ) {
+        this.titulo = titulo;
+    }
+    getTitle() {
+        return this.titulo;
     }
 }
 export default Nota;

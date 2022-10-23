@@ -19,3 +19,49 @@
     font-size: 1.3em;
     color: #f00;
 }
+/*__ Editando Notas */
+.aside_el {
+    display: flex;
+    flex-direction: row;
+}
+.aside_el a {
+    margin: .3em;
+}
+textarea {
+    width: 90%;
+    max-height: 100px;
+}
+.hr_p {
+    color: #c2c2c2;
+}
+.hr_t {
+    color: #090909;
+}
+.in_title {
+    font-size: 1.4em;
+}
+.note_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn_send {
+    width: 50%;
+    font-size: 1.2em;
+    background-color: var(--color_2);
+
+    color: #fff;
+
+    border: none;
+    outline: none;
+    padding: .5em;
+    border-radius: 10px;
+    transition: .2s all ease-in;
+    cursor: pointer;
+
+    box-shadow: 0 10px 10px -1px #9999;
+}
+.btn_send:hover {
+    letter-spacing: 2px;
+    transform: scale(1.1);
+}
