@@ -50,6 +50,7 @@ const addNewNoteElement = ( type ) => {
         input.name = 'txt';
         input.placeholder = 'Inserte un titulo';
         input.classList.add('in_title');
+        input.id = 'txt_value'
 
         elements.appendChild( input );
     }
@@ -58,7 +59,7 @@ const addNewNoteElement = ( type ) => {
         textarea.name = 'text';
         textarea.cols = "30";
         textarea.rows = "50";
-        textarea.id = 'area_txt';
+        textarea.id = 'txt_value';
 
         elements.appendChild( textarea );
     }
@@ -73,7 +74,32 @@ const addNewNoteElement = ( type ) => {
 }
 
 const saveNote = () => {
+    
+    for( let element of new_note.children ) {
+        let newNoteElement = {
+            type: '',
+            content: ''
+        }
+        try {
+            const content = element.children[0].children.txt_value
+            const type = element.children[0].children.txt_value.name
 
+            if( type == 'txt' ) {
+                newNoteElement.type = 'title'
+            }
+            if( type == 'text' ) {
+                newNoteElement.type = 'par'
+            }
+
+            newNoteElement.content = content.value;
+
+            nota.addElement( newNoteElement );
+        }
+        catch(err) {
+            console.log('es el boton');
+        }
+    }
+    console.log( nota );
 } 
 
 add_parr.addEventListener('click', () => {

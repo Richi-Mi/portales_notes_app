@@ -4,7 +4,7 @@ class Nota {
         this.titulo;
         this.elements = [];
     }
-    addElement( type, content ) {
+    addElement({ type, content }) {
         const element = {
             type,
             content
