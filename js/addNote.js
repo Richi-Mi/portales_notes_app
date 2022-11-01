@@ -1,4 +1,5 @@
 import Nota from "./Nota.js";
+import DataBase from './Database.js'
 
 const add_parr = document.querySelector('.add_title');
 const add_title = document.querySelector('.add_parr');
@@ -7,7 +8,8 @@ const note_btn = document.querySelector('.note_btn');
 
 const titulo = document.querySelector('#titulo');
 
-const nota = new Nota();
+let nota = new Nota();
+const database = new DataBase('notes_app');
 
 const removeNoteElement = ( evt ) => {
     evt.target.parentElement.parentElement.parentElement.remove();
@@ -81,8 +83,8 @@ const saveNote = () => {
             content: ''
         }
         try {
-            const content = element.children[0].children.txt_value
-            const type    = element.children[0].children.txt_value.name
+            const content = element.children[0].children.txt_value;
+            const type    = element.children[0].children.txt_value.name;
 
             if( type == 'txt' ) {
                 newNoteElement.type = 'title'
@@ -96,10 +98,18 @@ const saveNote = () => {
             nota.addElement( newNoteElement );
         }
         catch(err) {
-            console.log('es el boton');
+            console.log( 'Fue el boton' );
+        }
+        finally {
+            
         }
     }
-    console.log( nota );
+    database.addData( nota );
+    nota = new Nota();
+    titulo.value = '';
+
+
+database.readData();
 } 
 
 add_parr.addEventListener('click', () => {

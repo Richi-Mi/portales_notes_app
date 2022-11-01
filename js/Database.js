@@ -1,27 +1,71 @@
-const indexedDB = window.indexedDB;
+export default class DataBase {
+    constructor( dbname ) {
+        this.indexedDB = window.indexedDB;
+        this.request = this.indexedDB.open( dbname, 1 );  // Creamo o abrimos una nueva base de datos. (nombre, version)
+        this.objStore;
 
-if (indexedDB) {
-    const request = indexedDB.open('notes_app', 1); // Creamo o abrimos una nueva base de datos. (nombre, version)
-    let db
+        this.setEvents()
+            .then( res => {
+                this.db = res;
+                this.createStores();
+            });
+    }
+    setEvents() {
+        return new Promise( (resolve, reject) => {
+            this.request.onsuccess = () => {
+                // Codigo que se ejecuta si se encontro lo base de datos.
+                console.log('La base de datos fue encontrada.');
+                resolve( this.request.result ); // Retorna conexion a la base de datos
+            }
+            this.request.onupgradeneeded = () => {
+                // Retorna conexion a la base de datos
+                // Codigo que se ejecuta si se creo la base de datos.
+                console.log('La base de datos ha sido creada');
+                resolve( this.request.result );
+            }
+            this.request.onerror = ( error ) => {
+                reject('Programa no utilizable en este navegador ' + error);
+            }
+        } );
+    }
+    createStores() {
+        this.objStore = 'notes';
+        this.db.createObjectStore( this.objStore, {
+            autoIncrement: true
+        });
+    }
+    // Legacy
+    addData( data ) {
+        const transaction = this.db.transaction([ this.objStore ], 'readwrite');
+        const objectStore = transaction.objectStore( this.objStore );
+        
+        objectStore.add( data );
+    }
 
-    request.onsuccess = () => {
-        db = request.result // Retorna conexion a la base de datos
-        // Codigo que se ejecuta si se encontro lo base de datos.
-    }
-    request.onupgradeneeded = () => {
-        db = request.result // Retorna conexion a la base de datos
-        const notas = db.createObjectStore('notes')
-        // Codigo que se ejecuta si se creo la base de datos.
-    }
-    request.onerror = (error) => {
-        console.log('Programa no utlixable en este navegador ' + error);
-    }
-    const addData = (data) => {
-        const transaction = db.transaction(['notes'], 'readwrite');
-        const data = {
-            note_title: 'HOla Mundo',
-            note_data: []
+    readData() {
+        const transaction = this.db.transaction([ this.objStore ], 'readwrite');
+        const objectStore = transaction.objectStore( this.objStore );
+        const request = objectStore.openCursor();
+
+        request.onsuccess = (evt) => {
+            console.log(evt.target);
         }
     }
+    
+    updateData( data ) {
+        const transaction = this.db.transaction([ this.objStore ], 'readwrite');
+        const objectStore = transaction.objectStore( this.objStore );
 
+        objectStore.put( data ); 
+    }
+    removeData( key ) {
+        // retorna true si se borro el objeto
+        const transaction = this.db.transaction([ this.objStore ], 'readwrite');
+        const objectStore = transaction.objectStore( this.objStore );
+
+        const request = objectStore.delete( key );
+        request.onsuccess = () => {
+            return true;
+        }
+    }
 }
