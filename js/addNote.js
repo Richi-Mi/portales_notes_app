@@ -82,7 +82,7 @@ const saveNote = () => {
         }
         try {
             const content = element.children[0].children.txt_value
-            const type = element.children[0].children.txt_value.name
+            const type    = element.children[0].children.txt_value.name
 
             if( type == 'txt' ) {
                 newNoteElement.type = 'title'
