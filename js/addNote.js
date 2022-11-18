@@ -108,7 +108,7 @@ const saveNote = () => {
     nota = new Nota();
     titulo.value = '';
 
-    database.readData()
+    database.readData();
 } 
 
 add_parr.addEventListener('click', () => {
