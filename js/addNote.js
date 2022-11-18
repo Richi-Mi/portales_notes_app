@@ -109,6 +109,8 @@ const saveNote = () => {
     titulo.value = '';
 
     database.readData();
+
+    location.href = '/';
 } 
 
 add_parr.addEventListener('click', () => {
